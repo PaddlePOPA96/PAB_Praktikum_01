@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Penghitung - Komponen Kelas</title>
+</head>
+<body>
+    <h1>Penghitung - Komponen Kelas</h1>
+    <p>Hitungan: <span id="hitungan">0</span></p>
+    <button id="tambah">Tambah</button>
+    <button id="kurang">Kurang</button>
+
+    <script>
+        class Penghitung {
+            constructor() {
+                this.hitung = 0;
+                this.tampilanHitungan = document.getElementById('hitungan');
+                this.tambahButton = document.getElementById('tambah');
+                this.kurangButton = document.getElementById('kurang');
+                this.perbaruiPenghitung();
+                this.tambahkanEventListeners();
+            }
+
+            perbaruiPenghitung() {
+                this.tampilanHitungan.textContent = this.hitung;
+            }
+
+            tambahkanEventListeners() {
+                this.tambahButton.addEventListener('click', () => {
+                    this.hitung++;
+                    this.perbaruiPenghitung();
+                });
+
+                this.kurangButton.addEventListener('click', () => {
+                    this.hitung--;
+                    this.perbaruiPenghitung();
+                });
+            }
+        }
+
+        // Inisialisasi komponen penghitung
+        const penghitung = new Penghitung();
+    </script>
+</body>
+</html>
