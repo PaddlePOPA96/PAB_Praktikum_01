@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Example</title>
+
+    <!-- Tautan untuk React, ReactDOM, dan Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <h1>React Example</h1>
+    <div id="root"></div>
+
+    <!-- Script JSX -->
+    <script type="text/babel">
+        // Array Processing: Menginisialisasi items dan myElement sebagai elemen JSX berdasarkan array
+        let items = ["Table", "Handphone", "Computer"];
+        const myElement = (
+          <ul>
+            {items.map((item, index) => <li key={index}>{item}</li>)}
+          </ul>
+        );
+
+        const myApp = myElement;
+
+        ReactDOM.createRoot(document.getElementById('root')).render(myApp);
+    </script>
+</body>
+</html>
