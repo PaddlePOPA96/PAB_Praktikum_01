@@ -21,4 +21,20 @@ class Cat extends React.Component {
         );
     }
 };
-ReactDOM.render(<Cat name="Whiskers" />, document.getElementById('root'));
+
+// Cafe Component
+class Cafe extends React.Component {
+    render() {
+        return (
+        <div>
+            <Cat name="Munkustrap" />
+            <Cat name="Spot" />
+        </div>
+        );
+    }
+};
+
+const myElement = <Cafe />;
+const myApp = myElement;
+
+ReactDOM.createRoot(document.getElementById('root')).render(myApp);

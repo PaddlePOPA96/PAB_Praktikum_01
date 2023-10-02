@@ -15,6 +15,17 @@ const MyComponent = () => {
     );
 }
 let myElement = <MyComponent />
-ReactDOM.render(<MyComponent />, document.getElementById('root'));
 
+// Props in Functional Component
+const Practice = (props) => <h3>Practice: {props.course}</h3>;
+myElement = (
+    <div>
+        <Practice course="Javascript"/>
+        <Practice course="ReactJS"/>
+        <Practice course="React Native"/>
+    </div>
+);
 
+const myApp = myElement;
+
+ReactDOM.createRoot(document.getElementById('root')).render(myApp);

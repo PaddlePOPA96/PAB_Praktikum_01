@@ -1,18 +1,28 @@
-// Button Component
-const MyButton = (props) => {
-    const handleButtonClick = () => {
-        alert(props.message);
+    // Button Component
+    const MyButton = (props) => {
+        const handleButtonClick = () => {
+            alert(props.message);
+        }
+
+        return (
+            <button onClick={handleButtonClick} style={{ margin: "10px" }}>
+                {props.children}
+            </button>
+        );
     }
 
-    return (
-        <button onClick={handleButtonClick} style={{ margin: "10px" }}>
-            {props.children}
-        </button>
-    );
-}
+    // App Component
+    const MyApp = () => {
+        return (
+            <div>
+                <h1>Learn React</h1>
+                <MyButton message="Learn React">React</MyButton>
+                <MyButton message="Learn JavaScript">JavaScript</MyButton>
+            </div>
+        );
+    }
 
-// Render komponen MyButton ke dalam elemen dengan ID "root".
-ReactDOM.render(
-    <MyButton message="Pesan yang akan di-alert">Teks Tombol</MyButton>,
-    document.getElementById('root')
-);
+    const myElement = <MyApp />;
+    const myApp = myElement;
+
+    ReactDOM.createRoot(document.getElementById('root')).render(myApp);

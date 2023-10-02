@@ -55,10 +55,7 @@ const studentData = () => {
 }
 
 let { 
-    name: studentNameData, 
-    age: studentAgeData, 
-    department: studentDepartmentData
-} = studentData();
+    name: studentNameData,age: studentAgeData, department: studentDepartmentData} = studentData();
 
 console.log(studentNameData);  
 console.log(studentAgeData); 
